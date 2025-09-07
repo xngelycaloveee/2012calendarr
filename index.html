@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2012 Calendar</title>
+  <style>
+    body {font-family: Arial, sans-serif; background: #f8f5ff; text-align: center;}
+    h1 {color: #6a0dad;}
+    .calendar {display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px;}
+    .month {background: #e6d5f7; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2);}
+    .month h2 {color: #5a0099;}
+    table {width: 100%; border-collapse: collapse;}
+    th {background: #a366d9; color: white; padding: 5px;}
+    td {padding: 5px; text-align: center;}
+    .holiday {background: #ffccff; cursor: pointer;}
+    .popup {display: none; position: fixed; top: 20%; left: 30%; width: 40%; padding: 20px; background: white;
+            border: 2px solid #6a0dad; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3);}
+    .popup img {max-width: 100px; display: block; margin: 10px auto;}
+    .popup button {background: #6a0dad; color: white; border: none; padding: 5px 10px; margin-top: 10px; border-radius: 5px;}
+  </style>
+</head>
+<body>
+  <h1>Calendar 2012</h1>
+  <div class="calendar">
+
+    <div class="month">
+      <h2>January 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td class="holiday" onclick="showPopup('newyear')">1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+        <tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+ 
+    <div class="month">
+      <h2>February 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+        <tr><td>26</td><td>27</td><td>28</td><td>29</td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="month">
+      <h2>March 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+      </table>
+    </div>
+
+  
+    <div class="month">
+      <h2>April 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td class="holiday" onclick="showPopup('maundy')">5</td><td class="holiday" onclick="showPopup('goodfriday')">6</td><td>7</td></tr>
+        <tr><td>8</td><td class="holiday" onclick="showPopup('araw')">9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+        <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="month">
+      <h2>May 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td class="holiday" onclick="showPopup('labor')">1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+      </table>
+    </div>
+
+
+    <div class="month">
+      <h2>June 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+        <tr><td>10</td><td>11</td><td class="holiday" onclick="showPopup('independence')">12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+        <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+      </table>
+    </div>
+    
+    <div class="month">
+      <h2>July 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+        <tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+   
+    <div class="month">
+      <h2>August 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+        <tr><td>26</td><td>27</td><td class="holiday" onclick="showPopup('heroes')">27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+      </table>
+    </div>
+   
+    <div class="month">
+      <h2>September 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+ 
+    <div class="month">
+      <h2>October 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+   
+    <div class="month">
+      <h2>November 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td class="holiday" onclick="showPopup('allsaints')">1</td><td>2</td><td>3</td></tr>
+        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td class="holiday" onclick="showPopup('bonifacio')">30</td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="month">
+      <h2>December 2012</h2>
+      <table border="1">
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+        <tr><td>23</td><td>24</td><td class="holiday" onclick="showPopup('christmas')">25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+        <tr><td class="holiday" onclick="showPopup('rizal')">30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <h2 id="popupTitle"></h2>
+    <p id="popupDesc"></p>
+    <img id="popupImg" src="" alt="Holiday Image">
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    const holidays = {
+      newyear: ["New Year's Day", "January 1, 2012", "newyear.jpg"],
+      maundy: ["Maundy Thursday", "April 5, 2012", "maundy.jpg"],
+      goodfriday: ["Good Friday", "April 6, 2012", "goodfriday.jpg"],
+      araw: ["Araw ng Kagitingan", "April 9, 2012", "araw.jpg"],
+      labor: ["Labor Day", "May 1, 2012", "labor.jpg"],
+      independence: ["Independence Day", "June 12, 2012", "independence.jpg"],
+      heroes: ["National Heroes Day", "August 27, 2012", "heroes.jpg"],
+      allsaints: ["All Saints' Day", "November 1, 2012", "allsaints.jpg"],
+      bonifacio: ["Bonifacio Day", "November 30, 2012", "bonifacio.jpg"],
+      christmas: ["Christmas Day", "December 25, 2012", "christmas.jpg"],
+      rizal: ["Rizal Day", "December 30, 2012", "rizal.jpg"]
+    };
+
+    function showPopup(holiday) {
+      document.getElementById("popupTitle").innerText = holidays[holiday][0];
+      document.getElementById("popupDesc").innerText = holidays[holiday][1];
+      document.getElementById("popupImg").src = holidays[holiday][2];
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
